@@ -5,7 +5,7 @@
 The backend is built with Java + Spring Boot, uses MySQL for persistence, and a Smile ML model for predictions.
 The frontend is implemented with React, HTML, and CSS.
 
-📌 Project Overview
+### 📌 Project Overview
 
 This project predicts the outcome of UFC fights by analyzing fighter statistics, historical fight data, and contextual factors.
 The backend exposes REST APIs that the frontend consumes to display predictions and fighter comparisons.
@@ -20,7 +20,7 @@ Separate ML logic, business logic, and data access
 
 Follow secure configuration practices (no secrets in Git)
 
-🏗️ Architecture Overview
+### 🏗️ Architecture Overview
 Frontend (React)
         ↓
 Spring Boot REST API
@@ -43,7 +43,7 @@ Repository Layer – Database access via JPA
 
 Database – Stores fighters, fights, and statistics
 
-⚙️ Tech Stack
+### ⚙️ Tech Stack
 Backend
 
 Java
@@ -82,7 +82,7 @@ GitHub – Source control & collaboration
 
 Postman – API testing
 
-🧠 Machine Learning
+### 🧠 Machine Learning
 
 Uses historical UFC fight data
 
@@ -98,9 +98,9 @@ Models are trained offline and serialized
 
 Spring Boot loads the trained model at startup for fast predictions
 
-⚠️ Note: Training is not done during live API requests.
+#### ⚠️ Note: Training is not done during live API requests.
 
-🔐 Configuration & Security
+### 🔐 Configuration & Security
 
 Sensitive values (database credentials) are not committed to Git.
 
@@ -112,7 +112,7 @@ spring.datasource.password=${DB_PASSWORD}
 
 This follows industry best practices for secret management.
 
-🚀 Running the Backend
+### 🚀 Running the Backend
 Prerequisites
 
 Java 17+
@@ -137,7 +137,7 @@ The backend will start on:
 
 http://localhost:8080
 
-🔍 API Testing
+### 🔍 API Testing
 
 The backend APIs can be tested using Postman.
 
@@ -151,7 +151,7 @@ GET /fights/{id}
 
 Swagger/OpenAPI support can be added for interactive documentation.
 
-🧪 Testing
+### 🧪 Testing
 
 Unit and integration tests use Spring Boot Test
 
@@ -159,7 +159,7 @@ Repositories and services are tested independently
 
 API endpoints are manually tested using Postman
 
-📁 Project Structure (Backend)
+### 📁 Project Structure (Backend)
 src/main/java
  ├── controller
  ├── service
@@ -172,7 +172,7 @@ src/main/resources
  ├── application.properties
  └── models/
 
-📈 Future Improvements
+### 📈 Future Improvements
 
 Add user accounts & authentication
 
@@ -184,7 +184,7 @@ Deploy using Docker & cloud services
 
 Add caching for frequent predictions
 
-👤 Author
+### 👤 Author
 
 Ryan Pugh
 Computer Science Student
