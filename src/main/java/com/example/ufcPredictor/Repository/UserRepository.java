@@ -7,5 +7,5 @@ import com.example.ufcPredictor.Model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
-
+ 
 }
