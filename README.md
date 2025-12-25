@@ -1,8 +1,7 @@
-#
-🥊 UFC Fight Predictor
 
-##
-A full-stack application that predicts the winner of UFC fights using historical data and machine learning.
+# 🥊 UFC Fight Predictor
+
+## A full-stack application that predicts the winner of UFC fights using historical data and machine learning.
 The backend is built with Java + Spring Boot, uses MySQL for persistence, and a Smile ML model for predictions.
 The frontend is implemented with React, HTML, and CSS.
 
