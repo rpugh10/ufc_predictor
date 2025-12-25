@@ -44,7 +44,7 @@ Repository Layer – Database access via JPA
 Database – Stores fighters, fights, and statistics
 
 ### ⚙️ Tech Stack
-Backend
+#### Backend
 
 Java
 
@@ -64,7 +64,7 @@ Database
 
 MySQL 8
 
-Frontend
+#### Frontend
 
 React
 
@@ -161,15 +161,23 @@ API endpoints are manually tested using Postman
 
 ### 📁 Project Structure (Backend)
 src/main/java
+
  ├── controller
+ 
  ├── service
+ 
  ├── ml
+ 
  ├── repository
+ 
  ├── model
+ 
  └── config
 
 src/main/resources
+
  ├── application.properties
+ 
  └── models/
 
 ### 📈 Future Improvements
