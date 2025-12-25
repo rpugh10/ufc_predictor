@@ -1,5 +1,7 @@
 package com.example.ufcPredictor.Service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.ufcPredictor.Model.User;
@@ -37,6 +39,17 @@ public class UserService {
         
         //Deleting user by Id
         userRepository.deleteById(id);
+    }
+
+    public User getUserById(Long id){
+        User user = userRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("User Not found"));
+        return user;
+    }
+
+    public List<User> getAllUsers(){
+        List<User> user = userRepository.findAll();
+        return user;
     }
 
 }
