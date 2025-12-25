@@ -24,7 +24,8 @@ public class Fighter {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "age")
+    //Each fighter has a unique name
+    @Column(unique = true, nullable = false, name = "age")
     private int age;
 
     @Column(name = "height")
