@@ -37,8 +37,9 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @PathVariable User info){
+    //Using path variable the id comes from the URL and using request body saves what the user inputted
+    @PutMapping("/update/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User info){
         User user = userService.updateUser(id, info);
         return ResponseEntity.ok(user);
     }
@@ -48,7 +49,7 @@ public class UserController {
         return userService.createUser(user);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id){
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
