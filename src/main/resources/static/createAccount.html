@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet", href="createAccount.css">
+        <link rel="stylesheet" href="createAccount.css">
     </head>
     <body>
+        <form id="createUser">
         <div class="page">
             <div class="create_box">
                 <h2>Create Account</h2>
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Confirm Password">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
 
-                <button class="create_button">Create Account</button>
+                <button class="create_button" type="submit">Create Account</button>
 
                 <div class="link">
                     <a href="login.html">Back to Login</a>
                 </div>
             </div>
         </div>
+        </form>
+        <p id="message"></p>
+        <script src="createAccount.js" defer></script>
     </body>
 </html>
