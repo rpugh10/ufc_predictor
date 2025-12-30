@@ -3,6 +3,7 @@ package com.example.ufcPredictor.Controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,12 +13,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.ufcPredictor.DTO.UserDTO;
 import com.example.ufcPredictor.Model.User;
 import com.example.ufcPredictor.Service.UserService;
 
 
 @RestController
 @RequestMapping("/users") //Class mapping
+@CrossOrigin(origins = "http://localhost:8080")
 public class UserController {
 
     private final UserService userService;
@@ -44,10 +47,23 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    //? means "any type". In the context of ResponseEntity, it means the body can hold any type of object
     @PostMapping("/create")
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO)throws Exception{
+        if(!userDTO.getPassword().equals(userDTO.getConfimPassword())){
+            return ResponseEntity
+                    .badRequest()
+                    .body("Passwords do not match");
+        }
+
+        User user = new User();
+        user.setUsername(userDTO.getUsername());
+        user.setPassword(userDTO.getPassword());
+
+        User savedUser = userService.createUser(user);
+        return ResponseEntity.ok(savedUser);
     }
+    
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id){
