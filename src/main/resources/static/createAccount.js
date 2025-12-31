@@ -1,3 +1,18 @@
+const popup = document.getElementById("popup");
+const popupMessage = document.getElementById("popupMessage");
+const popupBtn = document.getElementById("popupBtn");
+
+function showPopup(message, onClose) {
+  popupMessage.innerText = message;
+  popup.classList.remove("hidden");
+
+  popupBtn.onclick = () => {
+    popup.classList.add("hidden");
+    if (onClose) onClose();
+  };
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("createAccount.js loaded");
 
@@ -14,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ✅ Client-side validation
     if (password !== confirmPassword) {
-      message.innerText = "Passwords do not match";
+      showPopup("Passwords do not match")
       return;
     }
 
@@ -35,13 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!response.ok) {
         const error = await response.text();
-        throw new Error(error);
+        throw new Error(error || "Account creation failed");
       }
 
-      message.innerText = "User created successfully!";
+    showPopup("Account created successfully!", () => {
+        window.location.href = "login.html";
+    });
+
     } catch (err) {
-      message.innerText = err.message;
-      console.error(err);
+     showPopup(err.message || "Something went wrong");
     }
   });
 
