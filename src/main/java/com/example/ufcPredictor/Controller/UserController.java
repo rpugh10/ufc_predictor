@@ -50,7 +50,7 @@ public class UserController {
     //? means "any type". In the context of ResponseEntity, it means the body can hold any type of object
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO)throws Exception{
-        if(!userDTO.getPassword().equals(userDTO.getConfimPassword())){
+        if(!userDTO.getPassword().equals(userDTO.getConfirmPassword())){
             return ResponseEntity
                     .badRequest()
                     .body("Passwords do not match");
@@ -59,6 +59,10 @@ public class UserController {
         User user = new User();
         user.setUsername(userDTO.getUsername());
         user.setPassword(userDTO.getPassword());
+
+        System.out.println(userDTO.getUsername());
+        System.out.println(userDTO.getPassword());
+        System.out.println(userDTO.getConfirmPassword());
 
         User savedUser = userService.createUser(user);
         return ResponseEntity.ok(savedUser);
