@@ -31,7 +31,8 @@ public class SecurityConfig {
                     "/main.css",
                     "/login.js",
                     "/createAccount.js",
-                    "/users/create"
+                    "/users/create",
+                    "/users/login"
                 ).permitAll()
                 .anyRequest().authenticated()
             )
