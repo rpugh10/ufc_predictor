@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.ufcPredictor.DTO.LoginDTO;
 import com.example.ufcPredictor.Model.User;
 import com.example.ufcPredictor.Repository.UserRepository;
 
@@ -17,6 +18,15 @@ public class UserService {
     public UserService(UserRepository userRepository, PasswordEncoder encoder){
         this.userRepository = userRepository;
         this.encoder = encoder;
+    }
+
+    public void login(LoginDTO loginDTO){
+        User user = userRepository.findByUsername(loginDTO.getUsername())
+            .orElseThrow(() -> new IllegalArgumentException("Invalid username or password"));
+        
+            if(!encoder.matches(loginDTO.getPassword(), user.getPassword())){
+                throw new IllegalArgumentException("Invalid password");
+            }
     }
 
     public User createUser(User user) throws Exception{
