@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.ufcPredictor.DTO.LoginDTO;
 import com.example.ufcPredictor.DTO.UserDTO;
 import com.example.ufcPredictor.Model.User;
 import com.example.ufcPredictor.Service.UserService;
@@ -67,6 +68,13 @@ public class UserController {
         User savedUser = userService.createUser(user);
         return ResponseEntity.ok(savedUser);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginDTO loginDto){
+        userService.login(loginDto);
+        return ResponseEntity.ok("Login successful");
+    }   
+    
     
 
     @DeleteMapping("/delete/{id}")
