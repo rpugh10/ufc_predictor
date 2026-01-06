@@ -4,16 +4,24 @@
 <link rel="stylesheet" href="login.css">
 </head>
 <body>
-   <div class="page">
-        <div class="login_box">
-            <h2>Login</h2>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
+    <form id="loginForm">
+        <div class="page">
+            <div class="login_box">
+                <h2>Login</h2>
+                <input id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
 
-            <button class="create_btn" onclick="createAccount()">Create Account</button>
-            <button class="login_btn" onclick="login()">Submit</button>
+                <button class="create_btn" onclick="createAccount()">Create Account</button>
+                <button class="login_btn" type="submit">Submit</button>
+            </div>
         </div>
-   </div>
+   </form>
+    <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <p id="popupMessage"></p>
+                <button id="popupBtn">OK</button>
+            </div>
+        </div>
    <script src="login.js" defer></script>
 </body>
 </html>
