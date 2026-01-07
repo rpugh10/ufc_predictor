@@ -21,7 +21,7 @@ Separate ML logic, business logic, and data access
 Follow secure configuration practices (no secrets in Git)
 
 ### 🏗️ Architecture Overview
-   Frontend 
+Frontend 
         ↓
 Spring Boot REST API
         ↓
@@ -66,11 +66,11 @@ MySQL 8
 
 #### Frontend
 
-React
-
 HTML
 
 CSS
+
+JS
 
 Tools & DevOps
 
