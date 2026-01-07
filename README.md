@@ -23,12 +23,16 @@ Follow secure configuration practices (no secrets in Git)
 ### 🏗️ Architecture Overview
 Frontend 
         ↓
+
 Spring Boot REST API
         ↓
+
 Prediction Service
         ↓
-Machine Learning Model (Smile)
+
+Machine Learning Model
         ↓
+
 MySQL Database
 
 Backend Layers
