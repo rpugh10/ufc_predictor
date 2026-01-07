@@ -32,7 +32,10 @@ public class SecurityConfig {
                     "/login.js",
                     "/createAccount.js",
                     "/users/create",
-                    "/users/login"
+                    "/users/login",
+                    "/predict",
+                    "/ufc-background.jpg",
+                    "/main.js"
                 ).permitAll()
                 .anyRequest().authenticated()
             )
