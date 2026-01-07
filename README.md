@@ -21,7 +21,7 @@ Separate ML logic, business logic, and data access
 Follow secure configuration practices (no secrets in Git)
 
 ### 🏗️ Architecture Overview
-Frontend (React)
+   Frontend 
         ↓
 Spring Boot REST API
         ↓
