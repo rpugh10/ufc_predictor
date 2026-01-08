@@ -29,7 +29,7 @@ public class PredictionController {
     public ResponseEntity<?> predict(@RequestBody PredictionRequestDTO request) {
         return predictionService.predict(request.getFighterA(), request.getFighterB());
     }
-
+    
     @GetMapping("/fighters/search")
     public ResponseEntity<String> search(@RequestParam String q) {
         return predictionService.searchFighters(q);
