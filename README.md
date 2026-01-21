@@ -2,8 +2,8 @@
 # 🥊 UFC Fight Predictor
 
 ## A full-stack application that predicts the winner of UFC fights using historical data and machine learning.
-The backend is built with Java + Spring Boot, uses MySQL for persistence, and a Smile ML model for predictions.
-The frontend is implemented with React, HTML, and CSS.
+The backend is built with Java + Spring Boot, uses MySQL for persistence, and a Python ML model for predictions.
+The frontend is implemented with HTML, CSS, and JS.
 
 ### 📌 Project Overview
 
@@ -62,8 +62,6 @@ Hibernate
 
 Machine Learning
 
-Smile (classification & regression models)
-
 Database
 
 MySQL 8
@@ -94,11 +92,7 @@ Feature engineering includes:
 
 Differences between fighter stats
 
-Per-minute normalization
-
 Recent fight performance
-
-Models are trained offline and serialized
 
 Spring Boot loads the trained model at startup for fast predictions
 
@@ -169,8 +163,6 @@ src/main/java
  ├── controller
  
  ├── service
- 
- ├── ml
  
  ├── repository
  
